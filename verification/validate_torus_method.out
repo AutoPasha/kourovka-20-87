@@ -1,0 +1,190 @@
+L2(8) [torus method]: torus orders [ 7, 9 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 0; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+L2(11) [torus method]: torus orders [ 10, 12 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 0; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 2
+L2(16) [torus method]: torus orders [ 15, 17 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 0; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+L2(31) [torus method]: torus orders [ 30, 32 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 0; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 2
+L2(59) [torus method]: torus orders [ 58, 60 ]; max omega(ss) = 
+3; max omega(s) with unipotent centraliser = 0; (P2) = false  witnesses ss 
+[ 30 ] mixed(s-part) [  ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 2
+L2(61) [torus method]: torus orders [ 60, 62 ]; max omega(ss) = 
+3; max omega(s) with unipotent centraliser = 0; (P2) = false  witnesses ss 
+[ 30 ] mixed(s-part) [  ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 2
+L3(2) [torus method]: torus orders [ 1, 3, 7 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 0; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+L3(3) [torus method]: torus orders [ 4, 8, 13 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+L3(4) [torus method]: torus orders [ 9, 15, 21 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 0; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 3
+L3(5) [torus method]: torus orders [ 16, 24, 31 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+L3(7) [torus method]: torus orders [ 36, 48, 57 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 3
+L3(8) [torus method]: torus orders [ 49, 63, 73 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+L3(9) [torus method]: torus orders [ 64, 80, 91 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+L3(11) [torus method]: torus orders [ 100, 120, 133 ]; max omega(ss) = 
+3; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[ 120 ] mixed(s-part) [ 10 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+U3(3) [torus method]: torus orders [ 7, 8, 16 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+U3(4) [torus method]: torus orders [ 13, 15, 25 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+U3(5) [torus method]: torus orders [ 21, 24, 36 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 3
+U3(7) [torus method]: torus orders [ 43, 48, 64 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+U3(8) [torus method]: torus orders [ 57, 63, 81 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 3
+U3(9) [torus method]: torus orders [ 73, 80, 100 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[  ] mixed(s-part) [ 10 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+U3(11) [torus method]: torus orders [ 111, 120, 144 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 3
+L4(3) [torus method]: torus orders [ 8, 16, 26, 32, 40 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 2
+L4(4) [torus method]: torus orders [ 27, 45, 63, 75, 85 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[  ] mixed(s-part) [ 15 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+L5(2) [torus method]: torus orders [ 1, 3, 7, 9, 15, 21, 31 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+L5(3) [torus method]: torus orders [ 16, 32, 52, 64, 80, 104, 121 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 26 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+L6(2) [torus method]: torus orders [ 1, 3, 7, 9, 15, 21, 27, 31, 45, 49, 63 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 15 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+U4(2) [torus method]: torus orders [ 3, 5, 9, 27 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+U4(3) [torus method]: torus orders [ 16, 20, 28, 32, 64 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 4
+U4(4) [torus method]: torus orders [ 45, 51, 65, 75, 125 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[  ] mixed(s-part) [ 15 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+U5(2) [torus method]: torus orders [ 9, 11, 15, 27, 81 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+U5(3) [torus method]: torus orders [ 56, 61, 64, 80, 112, 128, 256 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 28 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+U6(2) [torus method]: torus orders [ 9, 15, 21, 27, 33, 45, 81, 243 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 3
+S4(4) [torus method]: torus orders [ 9, 15, 17, 25 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+S4(5) [torus method]: torus orders [ 16, 24, 26, 36 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[  ] mixed(s-part) [ 6 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 2
+S4(7) [torus method]: torus orders [ 36, 48, 50, 64 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[  ] mixed(s-part) [ 6 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 2
+S4(8) [torus method]: torus orders [ 49, 63, 65, 81 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+S6(2) [torus method]: torus orders [ 1, 3, 5, 7, 9, 15, 27 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+S6(3) [torus method]: torus orders [ 8, 16, 20, 26, 28, 32, 40, 64 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 10 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 2
+S8(2) [torus method]: torus orders [ 1, 3, 5, 7, 9, 15, 17, 21, 25, 27, 45, 
+  81 ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 15 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+O7(3) [torus method]: torus orders [ 8, 16, 20, 26, 28, 32, 40, 64 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 2
+O8+(2) [torus method]: torus orders [ 1, 3, 7, 9, 15, 25, 27, 81 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+O8+(3) [torus method]: torus orders [ 16, 32, 52, 64, 80, 100, 112, 128, 256 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 4
+O8-(2) [torus method]: torus orders [ 3, 5, 9, 15, 17, 21, 27, 45 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 15 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+O8-(3) [torus method]: torus orders [ 32, 40, 56, 64, 80, 82, 104, 128, 160 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 10, 20 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 2
+G2(3) [torus method]: torus orders [ 4, 7, 8, 13, 16 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+G2(4) [torus method]: torus orders [ 9, 13, 15, 21, 25 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+G2(5) [torus method]: torus orders [ 16, 21, 24, 31, 36 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[  ] mixed(s-part) [ 6 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+G2(8) [torus method]: torus orders [ 49, 57, 63, 73, 81 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    no table ; implied |G_sc^F| = 4329310519296 = 
+[ [ 2, 18 ], [ 3, 5 ], [ 7, 2 ], [ 19, 1 ], [ 73, 1 ] ]
+3D4(2) [torus method]: torus orders [ 7, 9, 13, 21, 27, 49 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+3D4(3) [torus method]: torus orders [ 49, 52, 56, 73, 104, 112, 169 
+ ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 26, 28 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1
+Sz(8) [torus method]: torus orders [ 5, 7, 13 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 0; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+Sz(32) [torus method]: torus orders [ 25, 31, 41 ]; max omega(ss) = 
+1; max omega(s) with unipotent centraliser = 0; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+R(27) [torus method]: torus orders [ 19, 26, 28, 37 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+2F4(8) [torus method]: torus orders [ 25, 35, 37, 49, 57, 63, 65, 81, 91, 
+  109, 169 ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+1; (P2) = true
+    table verdict = true ; agree = true ; implied |G_sc^F| / |T| = 1
+F4(2) [torus method]: torus orders [ 1, 3, 5, 7, 9, 13, 15, 17, 21, 25, 27, 
+  45, 49, 81 ]; max omega(ss) = 2; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [  ] mixed(s-part) [ 15 ]
+    table verdict = false ; agree = true ; implied |G_sc^F| / |T| = 1

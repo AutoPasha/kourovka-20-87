@@ -1,0 +1,27 @@
+Syntax warning: Unbound global variable in direct_L3U3_check.g:17
+    iso := Filtered(NormedRowVectors(K^3), x -> x * f * List(x, y -> y^q) = Ze\
+ro(K));
+                                                    ^
+Syntax warning: Unbound global variable in direct_L3U3_check.g:17
+    iso := Filtered(NormedRowVectors(K^3), x -> x * f * List(x, y -> y^q) = Ze\
+ro(K));
+                                                                              \
+   ^
+L3(2): direct true, criterion true
+L3(3): direct true, criterion true
+U3(3): direct true, criterion true
+L3(4): direct true, criterion true
+U3(4): direct true, criterion true
+L3(5): direct true, criterion true
+U3(5): direct true, criterion true
+L3(7): direct true, criterion true
+U3(7): direct true, criterion true
+L3(8): direct true, criterion true
+U3(8): direct true, criterion true
+L3(9): direct true, criterion true
+U3(9): direct false, criterion false
+L3(11): direct false, criterion false
+U3(11): direct true, criterion true
+L3(13): direct true, criterion true
+U3(13): direct false, criterion false
+mismatches: 0

@@ -1,0 +1,25 @@
+L4(8): torus orders [ 343, 441, 511, 567, 585 ]; max omega(ss) = 
+3; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[ 585 ] mixed(s-part) [ 21, 63 ]
+U4(8): torus orders [ 441, 455, 513, 567, 729 ]; max omega(ss) = 
+3; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[ 455 ] mixed(s-part) [ 21, 63 ]
+S6(8): torus orders [ 343, 441, 455, 511, 513, 567, 585, 729 
+ ]; max omega(ss) = 3; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [ 455, 585 ] mixed(s-part) [ 21, 63, 65 ]
+3D4(4): torus orders [ 169, 189, 195, 241, 315, 325, 441 ]; max omega(ss) = 
+3; max omega(s) with unipotent centraliser = 2; (P2) = false  witnesses ss 
+[ 195, 315 ] mixed(s-part) [ 21, 63, 65 ]
+3D4(8): torus orders [ 3249, 3577, 3591, 4033, 4599, 4617, 5329 
+ ]; max omega(ss) = 3; max omega(s) with unipotent centraliser = 
+2; (P2) = false  witnesses ss [ 3591, 4599 ] mixed(s-part) [ 57, 511, 513 ]
+G2(8): torus orders [ 49, 57, 63, 73, 81 ]; max omega(ss) = 
+2; max omega(s) with unipotent centraliser = 1; (P2) = true
+SL4(8) witness: det = Z(2)^0, order = 126 = [ 2, 3, 3, 7 ]
+SL4(4) witness: det = Z(2)^0, order = 30 = [ 2, 3, 5 ]
+SU(4,8) witness found: element order 455 = 
+[ 5, 7, 13 ] ; centre of matrix group has order 1
+Sp(6,8) witness found: element order 455 = 
+[ 5, 7, 13 ] ; centre of matrix group has order 1
+Sp(6,4) witness found: element order 30 = 
+[ 2, 3, 5 ] ; centre of matrix group has order 1

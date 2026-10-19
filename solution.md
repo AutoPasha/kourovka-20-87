@@ -1,0 +1,246 @@
+# Kourovka Notebook, Problem 20.87 (W. J. Shi) — a solution
+
+**Problem 20.87.** *What are the non-abelian composition factors of finite groups in which the order of every element is divisible by at most two primes?* (For one prime, i.e. EPPO-groups, see arXiv:2003.09445.)
+
+Throughout, $\omega(n)$ is the number of distinct prime divisors of a positive integer $n$ ($\omega(1)=0$), and we say that a finite group $X$ has **property (P2)** if $\omega(|x|)\le 2$ for every $x\in X$, i.e. no element order of $X$ is divisible by three distinct primes. $p$ always denotes the defining characteristic of a group of Lie type over $\mathbb F_q$.
+
+---
+
+## 0. The answer
+
+**Main Theorem.** A finite non-abelian simple group $T$ is a composition factor of a finite group with property (P2) if and only if $T$ itself has (P2), and this happens exactly when $T$ is isomorphic to one of the following groups.
+
+1. **Alternating groups:** $A_n$, $5\le n\le 11$.
+2. **Sporadic groups:** $M_{11}, M_{12}, M_{22}, M_{23}, M_{24}, J_1, J_2, J_3, HS, He, Ru, Suz, O'N$.
+3. $L_2(q)$, $q\ge 4$, with $\ \omega\big(\tfrac{q-1}{d}\big)\le 2$ and $\omega\big(\tfrac{q+1}{d}\big)\le 2$, where $d=(2,q-1)$.
+4. $L_3(q)$ with $\ \omega\big(\tfrac{q-1}{d}\big)\le 1,\ \ \omega\big(\tfrac{q^2-1}{d}\big)\le 2,\ \ \omega\big(\tfrac{q^2+q+1}{d}\big)\le 2$, where $d=(3,q-1)$.
+5. $U_3(q)$, $q\ge 3$, with $\ \omega\big(\tfrac{q+1}{d}\big)\le 1,\ \ \omega\big(\tfrac{q^2-1}{d}\big)\le 2,\ \ \omega\big(\tfrac{q^2-q+1}{d}\big)\le 2$, where $d=(3,q+1)$.
+6. $Sz(q)={}^2B_2(q)$, $q=2^{2m+1}\ge 8$, with $\omega(q-1)\le 2$ and $\omega(q\pm\sqrt{2q}+1)\le 2$.
+7. ${}^2G_2(q)$, $q=3^{2m+1}\ge 27$, with $\omega(q-1)\le 2$, $\omega(q+1)\le 2$ and $\omega(q\pm\sqrt{3q}+1)\le 2$.
+8. **Eighteen further groups of Lie type:**
+   $L_4(3)$, $L_5(2)$, $U_4(2)\cong PSp_4(3)$, $U_4(3)$, $U_5(2)$, $U_6(2)$, $PSp_4(4)$, $PSp_4(8)$, $PSp_6(2)$, $\Omega_7(3)$, $P\Omega_8^+(2)$, $P\Omega_8^+(3)$, $G_2(3)$, $G_2(4)$, $G_2(8)$, ${}^3D_4(2)$, ${}^2F_4(2)'$, ${}^2F_4(8)$.
+
+(Isomorphisms such as $A_5\cong L_2(4)\cong L_2(5)$, $A_6\cong L_2(9)$, $A_8\cong L_4(2)$, $L_2(7)\cong L_3(2)$, $U_3(3)\cong G_2(2)'$, $L_2(8)\cong{}^2G_2(3)'$ cause harmless repetitions.)
+
+All groups of Lie type not covered by items 3–8 fail (P2); in particular every classical group whose natural module has dimension $\ge 9$, every group of Lie type of BN-rank $\ge 2$ over a field with $q\notin\{2,3,4,8\}$ other than $L_3(q)$, and every group of type $F_4, E_6, {}^2E_6, E_7, E_8$ fails (P2).
+
+Members of the families with small $q$ (computed from the criteria and cross-checked by an independent method, §10):
+
+* $L_2(q)$, $q\le 1000$: $q=4,5,7,8,9,11,13,16,17,19,23,25,27,29,31,32,37,41,43,47,49,53,64,67,71,73,79,81,89,97,101,\dots$ (86 values in $4\le q\le 1000$);
+* $L_3(q)$, $q\le 200$: $q=2,3,4,5,7,8,9,13,16,17,25,49,97,193$;
+* $U_3(q)$, $q\le 200$: $q=3,4,5,7,8,11,23,32,47,128$;
+* $Sz(q)$: $q=8,32,128,512,2048,8192$ satisfy the condition, $q=2^{15}$ does not ($2^{15}-1=7\cdot31\cdot151$);
+* ${}^2G_2(q)$: $q=27,243,2187$ satisfy the condition, $q=3^9$ does not ($3^9-1=2\cdot 13\cdot 757$).
+
+Whether the families 3–7 are infinite is a question of analytic number theory (simultaneous "few prime factors" conditions on values of polynomials) which we do not address. In contrast with the one-prime (EPPO) case, where Suzuki's list is finite, the answer here is necessarily given by arithmetic conditions.
+
+---
+
+## 1. Reduction to simple groups
+
+**Lemma 1.1.** (P2) is inherited by subgroups and by quotient groups, hence by all sections. Consequently, the non-abelian composition factors of finite (P2)-groups are exactly the non-abelian simple (P2)-groups.
+
+*Proof.* Subgroups: obvious. Quotients: let $N\trianglelefteq H$ and $hN\in H/N$ of order $m$. Since $(hN)^{|h|}=h^{|h|}N=N$, $m$ divides $|h|$, so the prime divisors of $m$ are among those of $|h|$ and $\omega(m)\le\omega(|h|)\le 2$. A composition factor $H/N$ of $G$ ($N\trianglelefteq H\le G$) is a section of $G$. Conversely a simple (P2)-group $T$ is a composition factor of the (P2)-group $T$. $\square$
+
+So the problem is equivalent to: *classify the finite non-abelian simple groups $T$ with (P2).*
+
+## 2. Elementary lemmas
+
+**Lemma 2.1.** A finite abelian group $A$ has an element whose order has $\ge 3$ prime divisors iff $\omega(|A|)\ge 3$.
+*Proof.* If $r_1,r_2,r_3$ are distinct primes dividing $|A|$, take elements $a_i$ of order $r_i$ (Cauchy); $a_1a_2a_3$ has order $r_1r_2r_3$. The converse is trivial. $\square$
+
+**Lemma 2.2 (number theory).** For a prime power $q$: $\ \omega(q-1)\le 1$ and $\omega(q+1)\le 1$ $\iff$ $q\in\{2,3,4,8\}$.
+*Proof.* If $q$ is odd, $q-1$ and $q+1$ are even prime powers, hence powers of $2$ differing by $2$, so $\{q-1,q+1\}=\{2,4\}$, $q=3$. Let $q=2^f$. If $2^f-1=r^a$ with $f\ge 2$, $a\ge 2$: for $a$ odd, $r^a+1=(r+1)(r^{a-1}-\dots+1)$ with the second factor odd and $>1$, impossible for a power of $2$; for $a$ even, $r^a+1\equiv 2\pmod 4$, so $2^f=2$, contradiction. Hence $2^f-1$ is $1$ or a prime, so $f=1$ or $f$ is prime. If $2^f+1=s^b$ with $b\ge 2$: for $b$ odd, $s^b-1=(s-1)(s^{b-1}+\dots+1)$ with odd second factor $>1$, impossible; for $b$ even, $(s^{b/2}-1)(s^{b/2}+1)=2^f$ gives $s^{b/2}=3$, $f=3$. Otherwise $2^f+1$ is a Fermat prime and $f$ is a power of $2$. So $f\in\{1,2,3\}$, i.e. $q\in\{2,4,8\}$; and $q=2,3,4,8$ indeed satisfy the condition. $\square$
+
+**Lemma 2.3.** Let $G$ be a finite group, $p$ a prime, $Z\le Z(G)$ a $p'$-group, and $g=su$ with $s$ a $p'$-element, $u$ a $p$-element, $su=us$. Then $|gZ|=|sZ|\cdot|u|$.
+*Proof.* $g^k\in Z$ iff $s^ku^k\in Z$; since the decomposition of an element into commuting $p'$- and $p$-parts is unique and $Z$ consists of $p'$-elements, this holds iff $u^k=1$ and $s^k\in Z$. $\square$
+
+**Lemma 2.4.** Let $T=G/Z$ with $G$ a finite group of Lie type in characteristic $p$, $Z\le Z(G)$ a $p'$-group. If a $p$-element $uZ$ centralises $sZ$ ($s$ semisimple), then $u$ centralises $s$.
+*Proof.* $usu^{-1}=sz$ with $z\in Z$; then $u^isu^{-i}=sz^i$, and $u^{p^k}=1$ gives $z^{p^k}=1$, so $z=1$. $\square$
+
+**Lemma 2.5 (monotonicity in classical groups).** Let $X(V)$ be one of $SL(V)$, $SU(V)$, $Sp(V)$, $\Omega(V)$ and $W\le V$ a non-degenerate (any subspace for $SL$) subspace with a complement $W'$ ($W'=W^\perp$ in the form cases), $W'\neq 0$. Then $X(W)\times 1_{W'}\le X(V)$ and $(X(W)\times 1_{W'})\cap Z(X(V))=1$ (scalars act as scalars on $W'$). Hence the simple group $X(V)/Z(X(V))$ contains a subgroup isomorphic to $X(W)$, which maps onto $X(W)/Z(X(W))$. In particular **if $X(W)/Z(X(W))$ fails (P2), so does $X(V)/Z(X(V))$** (lift a bad element to $X(W)$, Lemma 1.1).
+(For $\Omega$: the spinor norm, resp. the Dickson invariant for $q$ even, and the determinant are multiplicative over orthogonal sums, so $\Omega(W)\times 1\le\Omega(V)$.) $\square$
+
+## 3. Alternating groups
+
+**Proposition 3.1.** $A_n$ ($n\ge5$) has (P2) iff $n\le 11$.
+*Proof.* $(1\,2\,3\,4\,5)(6\,7\,8)(9\,10)(11\,12)\in A_{12}\le A_n$ ($n\ge12$) has order $30$. Let $n\le 11$ and $x\in A_n$ with $r_1r_2r_3\mid |x|$ for primes $r_1<r_2<r_3$. If no cycle length of $x$ is divisible by two of the $r_i$, the cycles cover at least $r_1+r_2+r_3$ points; this is $\ge 12$ unless $\{r_i\}=\{2,3,5\}$; but then an even cycle is needed and, $x$ being even, a second even cycle: at least $2+2+3+5=12$ points. If a cycle has length divisible by $r_ir_j$, it has length $\ge 6$, and covering the third prime gives either $6+5=11$ (a $6$-cycle and a $5$-cycle: an odd permutation, excluded), or at least $10+3=13$, $6+7=13$, $15$ points. Contradiction. (Also confirmed by the character tables of $A_5,\dots,A_{19}$, §10.) $\square$
+
+## 4. Sporadic groups
+
+**Proposition 4.1.** The sporadic groups with (P2) are exactly $M_{11},M_{12},M_{22},M_{23},M_{24},J_1,J_2,J_3,HS,He,Ru,Suz,O'N$.
+*Proof.* Inspection of the element orders (ATLAS; GAP `OrdersClassRepresentatives` of the 26 tables in the Character Table Library). The other thirteen groups $Co_1,Co_2,Co_3,Fi_{22},Fi_{23},Fi_{24}',HN,Ly,Th,J_4,McL,B,M$ all contain elements of order $30$. (Script `scan_ctbllib.g`, output `scan_ctbllib.out`.) $\square$
+
+## 5. Groups of Lie type: general facts and a decision procedure
+
+Let $\mathbf G$ be a simple simply connected algebraic group over $\overline{\mathbb F}_p$, $F$ a Steinberg endomorphism, $G=\mathbf G^F$, $Z=Z(G)$. Apart from $Sp_4(2)'\cong A_6$, $G_2(2)'\cong U_3(3)$, ${}^2G_2(3)'\cong L_2(8)$ and ${}^2F_4(2)'$ (treated by their tables) and the solvable groups $SL_2(2),SL_2(3),SU_3(2),Sz(2)$, every simple group of Lie type is $T=G/Z$ for such $G$. We use the standard facts (Carter [7, §§1.4, 3.3, 3.5], Springer–Steinberg [9], Digne–Michel [8, Ch. 3]):
+
+* (J) every $g\in G$ is $g=su=us$ with $s$ semisimple ($p'$) and $u$ unipotent ($p$-element);
+* (T) every semisimple $s\in G$ lies in an $F$-stable maximal torus; the $G$-classes of $F$-stable maximal tori correspond to $F$-classes of the Weyl group $W$, and $\mathbf T_w^F\cong Y/(F_w-1)Y$ where $Y$ is the cocharacter lattice (= coroot lattice, $\mathbf G$ simply connected) and $F_w$ the action of $Fw$ on $Y$; equivalently $\mathbf T_w^F=(F_w-1)^{-1}Y/Y\subset Y\otimes\mathbb Q/\mathbb Z$, and for $s\leftrightarrow v$, a root $\alpha$ satisfies $\alpha(s)=1\iff\langle\alpha,v\rangle\in\mathbb Z$;
+* (S) (Steinberg) $C_{\mathbf G}(s)$ is connected reductive, generated by $\mathbf T$ and the root subgroups $U_\alpha$ with $\alpha\in\Phi_s:=\{\alpha:\alpha(s)=1\}$; $s\in Z(C_{\mathbf G}(s))$; and $C_G(s)=C_{\mathbf G}(s)^F$ contains a non-trivial unipotent element iff $\Phi_s\ne\varnothing$.
+
+By Lemma 2.3 (Lemma 2.4 only confirms that working with lifts in $G$ loses nothing): **$T$ has (P2) iff (a) $\omega(|sZ|)\le 2$ for all semisimple $s\in G$, and (b) $\omega(|sZ|)\le 1$ for every semisimple $s$ with $\Phi_s\neq\varnothing$.** By Lemma 2.1, (a) is equivalent to $\omega(|\mathbf T_w^F/Z|)\le 2$ for all $w$. Here $|sZ|$ is the order of $v$ modulo the coweight lattice, i.e. the lcm of the denominators of $\langle\alpha_i,v\rangle$ for the simple roots $\alpha_i$.
+
+This gives a finite decision procedure for each pair (type, $q$), implemented in `torus_method.g` (it enumerates $\mathbf T_w^F$ for one $w$ in each $F$-class; for the Suzuki–Ree groups $F$ acts on $Y$ as $p^m\tau w$ with $\tau(\alpha^\vee)=\alpha_\rho^\vee$ or $p\,\alpha_\rho^\vee$ according as $\alpha^\vee$ is short or long, $q=p^{2m+1}$). As a control, the program also checks Steinberg's theorem that the number of $F$-stable maximal tori is $|G|_p^2$, i.e. $\frac{1}{|W|}\sum_{w}|\mathbf T_w^F|^{-1}=|G|_p^2/|G|$; in all 55 test cases it reproduced $|G|$ exactly. The procedure was validated against the character tables of 54 simple groups of Lie type (all verdicts agree, §10). It is used as the *main* argument only for $G_2(8)$ (for which a hand proof is also given in §8.3), and otherwise as an independent check.
+
+## 6. The rank-one-type families
+
+**Proposition 6.1 ($L_2(q)$).** $L_2(q)$, $q\ge4$, has (P2) iff $\omega(\frac{q-1}{d}),\omega(\frac{q+1}{d})\le 2$, $d=(2,q-1)$.
+*Proof.* By Dickson's theorem [2, II.8.3–8.5, 8.27] every element of $L_2(q)$ lies in a Sylow $p$-subgroup (elementary abelian) or in a cyclic subgroup of order $(q-1)/d$ or $(q+1)/d$, and such cyclic subgroups exist. So the element orders are $p$ and the divisors of $(q\pm1)/d$. $\square$
+
+**Proposition 6.2 ($Sz(q)$).** $Sz(q)$ has (P2) iff $\omega(q-1),\omega(q\pm\sqrt{2q}+1)\le2$.
+*Proof.* By Suzuki [3] (see also Shi [5]) the element orders of $Sz(q)$ are exactly the divisors of $4$, $q-1$, $q+\sqrt{2q}+1$, $q-\sqrt{2q}+1$, and cyclic subgroups of these orders exist. $\square$
+
+**Proposition 6.3 (${}^2G_2(q)$).** ${}^2G_2(q)$, $q=3^{2m+1}\ge27$, has (P2) iff $\omega(q-1),\omega(q+1),\omega(q\pm\sqrt{3q}+1)\le 2$.
+*Proof.* By Brandl–Shi [4, Lemma 4] (see also Ward [6]) the set of element orders of ${}^2G_2(q)$ is the set of divisors of $6,9,q-1,\frac{q+1}{2},q\pm\sqrt{3q}+1$; since $4\mid q+1$, $\omega(\frac{q+1}{2})=\omega(q+1)$. $\square$
+
+**Proposition 6.4 ($L_3(q)$ and $U_3(q)$).** Let $\varepsilon=+1$ ($L_3(q)$) or $\varepsilon=-1$ ($U_3(q)$, $q\ge3$), $d=(3,q-\varepsilon)$. Then $L_3^\varepsilon(q)$ has (P2) iff
+$$\omega\Big(\frac{q-\varepsilon}{d}\Big)\le 1,\qquad \omega\Big(\frac{q^2-1}{d}\Big)\le 2,\qquad \omega\Big(\frac{q^2+\varepsilon q+1}{d}\Big)\le 2 .$$
+
+*Proof.* Let $S=SL_3(q)$ acting on $V=\mathbb F_q^3$, resp. $S=SU_3(q)$ acting on $V=\mathbb F_{q^2}^3$ with a non-degenerate hermitian form; $Z=Z(S)$, $|Z|=d$, $T=S/Z$. Let $\mu_{q-\varepsilon}\le\overline{\mathbb F}_p^{\,*}$ be the group of $(q-\varepsilon)$-th roots of unity.
+
+*Semisimple elements.* Define abelian subgroups of $S$:
+$A_1$ = the diagonal subgroup ($\varepsilon=-1$: diagonal w.r.t. an orthonormal basis), $|A_1|=(q-\varepsilon)^2$;
+$A_2$: for $\varepsilon=+1$, $\{x\oplus N(x)^{-1}\}$ on $\mathbb F_{q^2}\oplus\mathbb F_q$, $x\in\mathbb F_{q^2}^*$; for $\varepsilon=-1$, $\{x$ on $e$, $x^{-q}$ on $f$, $x^{q-1}$ on $w\}$ with $(e,f)$ a hyperbolic pair and $w$ anisotropic, $x\in\mathbb F_{q^2}^*$; $|A_2|=q^2-1$;
+$A_3$: the elements of determinant $1$ of the "Singer" torus $\mathbb F_{q^3}^*$ (resp. of $\mu_{q^3+1}\le\mathbb F_{q^6}^*$ acting on $\mathbb F_{q^6}\cong\mathbb F_{q^2}^3$ with the trace hermitian form); $|A_3|=q^2+\varepsilon q+1$ (for $\varepsilon=-1$: $\det x=x^{1+q^2+q^4}=x^{q^2-q+1}$ on $\mu_{q^3+1}$).
+Each $A_i$ contains $Z$. Let $s\in S$ be semisimple; we show that $s$ lies in an abelian subgroup $A\le S$ with $Z\le A$ and $|A|\in\{|A_1|,|A_2|,|A_3|\}$. For $\varepsilon=+1$, according to the factorisation of the characteristic polynomial into irreducibles over $\mathbb F_q$ (degrees $1+1+1$, $1+2$, $3$), $s$ is diagonalisable over $\mathbb F_q$, or acts as multiplication by some $x\in\mathbb F_{q^2}^*$ on a 2-dimensional summand $\cong\mathbb F_{q^2}$ and by $N(x)^{-1}$ on a complementary line, or generates $\mathbb F_q[s]\cong\mathbb F_{q^3}$; so $s$ lies in a $GL_3(q)$-conjugate of $A_1$, $A_2$ or $A_3$. For $\varepsilon=-1$, decompose $V$ into the primary components $V_f$ of $s$ ($f$ irreducible over $\mathbb F_{q^2}$); $V_f\perp V_g$ unless $g=f^*$ (the polynomial whose roots are the $\lambda^{-q}$). A self-dual $f$ of degree $2$ is impossible (it would force $\lambda^{q+1}=1$, i.e. $\lambda\in\mathbb F_{q^2}$), so there are three cases. (i) All $f$ are self-dual of degree $1$: the eigenspaces are non-degenerate and orthogonal, so $s$ is diagonal in an orthonormal basis, i.e. lies in a conjugate of $A_1$. (ii) $V=V_f\oplus V_{f^*}\perp\langle w\rangle$ with $\deg f=1$, $f\ne f^*$: choose $e\in V_f$, $f'\in V_{f^*}$ with $(e,f')=1$; then $s=\mathrm{diag}(x,x^{-q},x^{q-1})$ in the basis $e,f',w$ (the last entry is forced by $\det s=1$), so $s$ lies in a conjugate of $A_2$. (iii) $f$ self-dual of degree $3$: then $K=\mathbb F_{q^2}[s]\cong\mathbb F_{q^6}$, the adjoint involution of the form restricts to the automorphism $y\mapsto y^{q^3}$ of $K$ (the only one of order $2$ extending $y\mapsto y^q$ on $\mathbb F_{q^2}$), so $A:=\{y\in K^*: y^{q^3+1}=1,\ \det y=1\}$ is an abelian subgroup of $S$ containing $s$ and $Z$, of order $q^2-q+1$. In all cases a $GL_3$- or $GU_3$-conjugate of $A_i$ is again an abelian subgroup of $S$ of order $|A_i|$ containing $Z$. Hence the semisimple elements of $T$ are exactly the elements of the subgroups $A/Z$, where $A\ge Z$ runs over abelian subgroups of $S$ of orders $|A_1|,|A_2|,|A_3|$ (the $A_i$ themselves among them), and by Lemma 2.1 they satisfy (P2) iff $\omega((q-\varepsilon)^2/d)=\omega(q-\varepsilon)\le2$, $\omega((q^2-1)/d)\le2$, $\omega((q^2+\varepsilon q+1)/d)\le 2$.
+
+*Elements with non-trivial unipotent part.* Let $g=su$, $u\ne1$ unipotent, $su=us$. If $s$ had three distinct eigenvalues its centraliser in $GL_3(\overline{\mathbb F}_p)$ would be a torus, so $s$ has eigenvalues $\lambda,\lambda,\lambda^{-2}$. If $\lambda^3=1$, then $s\in Z$ and $gZ=uZ$ has $p$-power order, which is harmless; so let $\lambda^3\ne1$. The double eigenvalue is fixed by $x\mapsto x^q$ (resp. $x\mapsto x^{-q}$), so $\lambda\in\mu_{q-\varepsilon}$. $u$ preserves the $2$-dimensional $\lambda$-eigenspace and acts trivially on the $\lambda^{-2}$-eigenline, so $|u|=p$. Moreover $s^k\in Z$ iff $\lambda^{3k}=1$, so $|sZ|=|\lambda^3|$, and by Lemma 2.3 $|gZ|=p\,|\lambda^3|$. As $\lambda$ runs over $\mu_{q-\varepsilon}$, $\lambda^3$ runs over a cyclic group of order $(q-\varepsilon)/d$; conversely, for every $\lambda\in\mu_{q-\varepsilon}$, $s=\mathrm{diag}(\lambda,\lambda,\lambda^{-2})$ (orthonormal basis if $\varepsilon=-1$) lies in $S$ and centralises the non-trivial unipotent elements of $SL$ (resp. $SU$) of its $\lambda$-eigenspace. Hence these elements have (P2) iff $\omega((q-\varepsilon)/d)\le1$; this also implies $\omega(q-\varepsilon)\le2$. $\square$
+
+(Consistent with Buturlakin's description of the spectra of $L_3^\varepsilon(q)$ [10]; verified for all $q\le 200$ by the procedure of §5, §10.)
+
+## 7. All other groups of Lie type: reduction to $q\in\{2,3,4,8\}$
+
+**Proposition 7.1.** Let $T$ be a simple group of Lie type over $\mathbb F_q$ not of type $A_1$, $A_2$, ${}^2A_2$, ${}^2B_2$, ${}^2G_2$. If $T$ has (P2) then $q\in\{2,3,4,8\}$, and $T$ is not of type $F_4,E_6,{}^2E_6,E_7,E_8$.
+
+*Proof.* We exhibit elements of orders $p(q-1)$ and $p(q+1)$; then (P2) forces $\omega(q\pm1)\le1$ and Lemma 2.2 gives $q\in\{2,3,4,8\}$. Recall $SL_2(q)$ has cyclic subgroups of orders $q-1$ and $q+1$.
+
+* $L_n(q)$, $n\ge4$; $U_n(q)$, $n\ge4$; $PSp_{2n}(q)$, $n\ge2$: the natural module contains $W_1\oplus W_2\ (\oplus W_3)$ with $W_1,W_2$ two-dimensional (non-degenerate in the unitary/symplectic case) and $SL(W_i)=SU(W_i)=Sp(W_i)\cong SL_2(q)$. Take $u\ne1$ unipotent in $SL(W_1)$ and $y\in SL(W_2)$ of order $q\pm1$, $g=u\oplus y\oplus 1$. If $g^k$ is scalar $\lambda$, then $u^k=\lambda\cdot 1_{W_1}$ is unipotent, so $\lambda=1$; hence $|gZ|=p\,(q\pm1)$.
+* $\Omega_{2n+1}(q)$, $q$ odd, $n\ge3$, and $P\Omega^\pm_{2n}(q)$, $n\ge4$, $q$ odd: by Lemma 2.5 they contain $\Omega_5(q)\cong PSp_4(q)$, which has such elements. $P\Omega^\pm_{2n}(q)$, $q$ even, $n\ge4$: contains $Sp_{2n-2}(q)\ge Sp_4(q)$ (stabiliser of a non-singular vector, [16, 4.1.7]).
+* $G_2(q)$: contains $SL_3(q)$ and $SU_3(q)$ ([11], [12]); in them $s=\mathrm{diag}(\lambda,\lambda,\lambda^{-2})$ with $|\lambda|=q\mp1$, times a commuting unipotent element of order $p$ of $SL$ (resp. $SU$) of the $\lambda$-eigenspace, has order $p(q\mp1)$; these subgroups are contained in $G_2(q)$ faithfully.
+* ${}^3D_4(q)\ge G_2(q)$ [13]; ${}^2F_4(q)\ge Sp_4(q)$, $q=2^{2m+1}$ [14].
+* $F_4(q)\ge {}^3D_4(q).3$ [15]; by the above and §8 (${}^3D_4(q)$ fails (P2) for every $q\ne2$) and the table of $F_4(2)$ (element of order $30$), $F_4(q)$ fails (P2) for all $q$. [Alternatively $F_4(q)\ge B_4(q)$, and $\Omega_9(q)$, $Sp_8(q)$ fail.] Finally $F_4(q)$ embeds in $E_6(q)$, ${}^2E_6(q)$ (fixed points of a graph automorphism of $E_6^{sc}$), and in $E_7(q)$, $E_8(q)$ (via the Levi subgroups $E_6^{sc}\le E_7^{sc}$, $E_7^{sc}\le E_8$; $F_4(q)$ is simple, so it meets the centre trivially). $\square$
+
+## 8. The cases $q\in\{2,3,4,8\}$
+
+### 8.1 Classical groups
+By Lemma 2.5, once $X_m(q)$ fails, all $X_n(q)$, $n\ge m$, fail. The base cases (GAP character tables unless stated):
+
+| family | (P2) holds | first failure (witness order) |
+|---|---|---|
+| $L_n(2)$, $n\ge4$ | $L_4(2)\cong A_8$, $L_5(2)$ | $L_6(2)$ (30) |
+| $L_n(3)$, $n\ge4$ | $L_4(3)$ | $L_5(3)$ (78) |
+| $L_n(4)$, $n\ge4$ | — | $L_4(4)$ (30) |
+| $L_n(8)$, $n\ge4$ | — | $L_4(8)$ (126 = $2\cdot3^2\cdot7$; explicit matrix, `boundary_check.g`) |
+| $U_n(2)$, $n\ge4$ | $U_4(2)$, $U_5(2)$, $U_6(2)$ | $U_7(2)$ (30) |
+| $U_n(3)$, $n\ge4$ | $U_4(3)$ | $U_5(3)$ (42) |
+| $U_n(4)$, $n\ge4$ | — | $U_4(4)$ (30) |
+| $U_n(8)$, $n\ge4$ | — | $U_4(8)$ (455 = $5\cdot7\cdot13$; explicit element of $SU_4(8)$, centre trivial) |
+| $PSp_{2n}(2)$, $n\ge3$ | $PSp_6(2)$ | $PSp_8(2)$ (30) |
+| $PSp_{2n}(3)$, $n\ge2$ | $PSp_4(3)\cong U_4(2)$ | $PSp_6(3)$ (30) |
+| $PSp_{2n}(4)$, $n\ge2$ | $PSp_4(4)$ | $PSp_6(4)$ (30) |
+| $PSp_{2n}(8)$, $n\ge2$ | $PSp_4(8)$ | $PSp_6(8)$ (455; explicit element of $Sp_6(8)$) |
+| $\Omega_{2n+1}(3)$, $n\ge3$ | $\Omega_7(3)$ | $\Omega_9(3)$ (30) |
+| $P\Omega^+_{2n}(2)$, $n\ge4$ | $P\Omega^+_8(2)$ | $P\Omega^+_{10}(2)$ (30) |
+| $P\Omega^-_{2n}(2)$, $n\ge4$ | — | $P\Omega^-_8(2)$ (30) |
+| $P\Omega^+_{2n}(3)$, $n\ge4$ | $P\Omega^+_8(3)$ | $P\Omega^+_{10}(3)$ (30) |
+| $P\Omega^-_{2n}(3)$, $n\ge4$ | — | $P\Omega^-_8(3)$ (30) |
+| $P\Omega^\pm_{2n}(4),P\Omega^\pm_{2n}(8)$, $n\ge4$ | — | contain $Sp_6(q)$, which fails |
+
+Monotonicity used: $L_n\supseteq SL_{n-1}$, $U_n\supseteq SU_{n-1}$, $PSp_{2n}\supseteq Sp_{2n-2}$; $\Omega_{2n+1}(3)$ ($n\ge5$) and $P\Omega^\pm_{2n}(3)$ ($n\ge5$) contain $\Omega_9(3)$; $P\Omega^\pm_{2n}(2)\supseteq Sp_{2n-2}(2)\supseteq Sp_8(2)$ for $n\ge5$; $P\Omega^-_{2n}(q)\supseteq\Omega^-_8(q)$. ($\Omega_{2n+1}(q)$ for $q$ even is $PSp_{2n}(q)$; orthogonal groups of dimension $\le6$ are $L_2,L_4,U_4,PSp_4$.) In particular, $PSp_4(q)$ has (P2) exactly for $q\in\{3,4,8\}$.
+
+### 8.2 Exceptional groups
+* $G_2(q)$, $q\in\{3,4,8\}$: all three have (P2) ($G_2(3),G_2(4)$: tables; $G_2(8)$: §8.3). ($G_2(2)'\cong U_3(3)$.)
+* ${}^3D_4(q)$: ${}^3D_4(2)$ has (P2) (table); ${}^3D_4(3)$ (42), ${}^3D_4(4)$ (42) fail (tables); ${}^3D_4(8)$ fails: it contains $SL_2(512)\times SL_2(8)$ [13], hence an element of order $513\cdot7=3^3\cdot7\cdot19$ (also found by the procedure of §5). Other $q$: Proposition 7.1.
+* ${}^2F_4(q)$: ${}^2F_4(2)'$ and ${}^2F_4(8)$ have (P2) (tables; for ${}^2F_4(8)$ also §5: the eleven maximal tori have orders $25,35,37,49,57,63,65,81,91,109,169$, and every semisimple $s\ne1$ with $\Phi_s\neq\varnothing$ has order dividing $3$, $7$, $9$, $5$ or $13$). For $q=2^{2m+1}\ge32$: Proposition 7.1.
+* $F_4$, $E_6$, ${}^2E_6$, $E_7$, $E_8$: fail (Proposition 7.1).
+
+### 8.3 Hand proof that $G_2(8)$ has (P2)
+$G_2$ is simply connected and adjoint. (a) The $F$-classes of $W=D_{12}$ give six classes of maximal tori, with $|\mathbf T_w^F|=\chi_w(q)$, $\chi_w$ the characteristic polynomial of $w$: $(q-1)^2,(q+1)^2,q^2-1$ (two classes), $q^2+q+1$, $q^2-q+1$. For $q=8$: $49,81,63=3^2\cdot7,73,57=3\cdot19$, all with $\omega\le2$. (b) With $a$ short and $b$ long simple roots: if $\alpha_1,\dots,\alpha_k\in\Phi_s$ and $\beta\in\Phi\cap\sum\mathbb Z\alpha_i$ then $\beta(s)=1$, so $\Phi_s=\Phi\cap\mathbb Z\Phi_s$; in particular $\Phi_s$ is a root subsystem. The root subsystems of $G_2$ are, up to $W$, $\varnothing$, $A_1$, $\tilde A_1$, $A_1\tilde A_1=\{\pm b,\pm(2a+b)\}$, $A_2=\{\pm b,\pm(3a+b),\pm(3a+2b)\}$, $\tilde A_2$ (short roots) and $G_2$; $\tilde A_2$ does not occur since the short roots span the whole root lattice, and $\Phi_s=G_2$ means $s\in Z(\mathbf G)=1$. Writing $t\in\mathbf T$ as $(a(t),b(t))=(x,y)$ (recall $X(\mathbf T)=\mathbb Za\oplus\mathbb Zb$): for $A_1\tilde A_1$, $Z(C_{\mathbf G}(s))=\{y=1,\ x^2y=1\}=\{y=1,x^2=1\}$ is trivial in characteristic $2$; for $A_2$ it is $\{y=1,\ x^3y=1\}$, of order $3$; for $A_1$ or $\tilde A_1$ it is the kernel of a primitive character, hence a one-dimensional torus $\mathbf S$, $F$-stable because $C_{\mathbf G}(s)$ is, and $F$ acts on $X(\mathbf S)\cong\mathbb Z$ as $\pm q$, so $|\mathbf S^F|=q\mp1$. So every semisimple $s\ne1$ with $\Phi_s\ne\varnothing$ has order dividing $3$, $7$ or $9$, a prime power. By §5, $G_2(8)$ has (P2). $\square$
+
+## 9. Conclusion of the proof
+Every non-abelian simple group is alternating, sporadic, or of Lie type. §§3–4 settle the first two classes. For Lie type: the families $L_2,L_3,U_3,Sz,{}^2G_2$ are settled by §6 (for every $q$); by Proposition 7.1 every other group of Lie type with (P2) is defined over $q\in\{2,3,4,8\}$ and is not of type $F_4,E_6,{}^2E_6,E_7,E_8$; §8 lists exactly which of these have (P2): item 8 of the Main Theorem together with $L_4(2)\cong A_8$ and $PSp_4(2)'\cong A_6$. With Lemma 1.1 this proves the Main Theorem. $\blacksquare$
+
+## 10. Computer verification (GAP 4.14, CTblLib, all scripts in this folder)
+
+* `scan_ctbllib.g` → `scan_ctbllib.out`: all 154 non-abelian simple groups with a character table in CTblLib (all 26 sporadic groups, $A_5$–$A_{19}$, many groups of Lie type including $S_4(8)$ and ${}^2F_4(8)$). 85 have (P2), 69 do not (with a witness element order).
+* `compare_theorem_with_tables.py` → `compare_theorem_with_tables.out`: the Main Theorem predicts the verdict of every one of these 154 tables correctly (no mismatches).
+* `torus_method.g`: the decision procedure of §5.
+* `validate_torus_method.g` → `validate_torus_method.out`: 55 groups of Lie type; for the 54 with a table the procedure agrees with the table, and Steinberg's count reproduces $|G|$ in all cases.
+* `families_check.g` → `families_check.out`: the closed-form criteria of §6 agree with the procedure for $L_2(q)$, $q\le1000$ (191 values), $L_3(q)$ and $U_3(q)$, $q\le200$, $Sz(q)$, $q\le2^{11}$, ${}^2G_2(q)$, $q\le3^7$: 0 mismatches. `families_check2.g` → `families_check2.out` extends the $L_2(q)$ check to $1000<q\le2000$ (140 values, 0 mismatches). `families_check3.g` → `families_check3.out` extends the $L_3(q)$, $U_3(q)$ check to $200<q\le400$ (37 values, 0 mismatches). `direct_L3U3_check.g` → `direct_L3U3_check.out` checks the criterion of Proposition 6.4 directly on the conjugacy classes of the actual groups $L_3(q)$, $q\le13$, and $U_3(q)$, $3\le q\le13$ (17 groups, 0 mismatches).
+* `mixed_orders.g` → `mixed_orders.out`: for $G_2(8)$, ${}^2F_4(8)$, $PSp_4(8)$ the torus orders and the orders of the semisimple $s\ne1$ with $\Phi_s\ne\varnothing$ (resp. $\{3,7,9\}$, $\{3,5,7,9,13\}$, $\{3,7,9\}$), confirming §8.2–8.3.
+* `extra_torus_check.g` → `extra_torus_check.out`: the procedure confirms that $U_7(2)$, $PSp_6(4)$, $\Omega_9(3)$, $P\Omega^\pm_{10}(2)$, $P\Omega^\pm_{10}(3)$ fail (P2).
+* `direct_classes_check.g` → `direct_classes_check.out` (no character tables used): conjugacy classes of the actual groups $L_4(3)$, $L_5(2)$, $U_4(3)$, $U_5(2)$, $PSp_4(4)$, $PSp_6(2)$, $PSp_4(8)$, $P\Omega_8^+(2)$ (permutation action on projective points) give the same element orders, all with $\omega\le2$. `direct_classes_check2.g` → `direct_classes_check2.out` does the same for $\Omega_7(3)$ and $P\Omega_8^+(3)$ (element orders $1$–$10,12,13,14,15,18,20$ in both). `direct_classes_check3.g` → `direct_classes_check3.out`: $U_6(2)$ (action of $SU_6(2)$ on the 693 isotropic points; element orders $1$–$12,15,18$).
+* `g2_8_sample.g` → `g2_8_sample.out`: an independent construction of $G_2(8)$ from the Chevalley lattice of the 7-dimensional module (order $4329310519296$ confirmed); 3000 random elements have orders in $\{3,4,6,7,8,9,12,14,18,19,21,57,63,73\}$, none with three prime divisors (evidence only; the proof is §8.3).
+* `direct_L2_check.g` → `direct_L2_check.out`: the criterion of Proposition 6.1 agrees with the conjugacy classes of $PSL(2,q)$ for all 42 prime powers $4\le q\le128$.
+* `boundary_check.g` → `boundary_check.out`: $L_4(8)$, $U_4(8)$, $PSp_6(8)$, ${}^3D_4(4)$, ${}^3D_4(8)$ fail, $G_2(8)$ has (P2) (procedure); explicit elements of orders $126$ in $SL_4(8)$, $30$ in $SL_4(4)$, $455$ in $SU_4(8)$ and $Sp_6(8)$, $30$ in $Sp_6(4)$ (centres trivial).
+
+Run: `gap -q <script>.g` (GAP 4 with the ctbllib package) from this folder (`torus_method.g` is read by the other scripts).
+
+## 11. Status of the argument
+
+* **Proved by hand (modulo standard theory):** reduction (§1), alternating groups (§3), the families $L_3(q)$, $U_3(q)$ (§6.4), the reduction to $q\in\{2,3,4,8\}$ and the bounds on rank (§7, §8.1 monotonicity), $G_2(8)$ (§8.3).
+* **Relies on cited classical results:** spectra of $L_2(q)$ (Dickson), $Sz(q)$ (Suzuki), ${}^2G_2(q)$ (Ward; Brandl–Shi); the subgroup containments $SL_3(q),SU_3(q)\le G_2(q)$, $G_2(q),\ SL_2(q^3)\circ SL_2(q)\le{}^3D_4(q)$, $Sp_4(q)\le{}^2F_4(q)$, ${}^3D_4(q).3\le F_4(q)$, $F_4(q)\le E_6(q),{}^2E_6(q),E_7(q),E_8(q)$; the general theory of maximal tori and semisimple centralisers (Steinberg, Springer–Steinberg, Carter).
+* **Relies on computation with library character tables (ATLAS/CTblLib):** the sporadic groups and the finitely many base cases in §8 ($L_4(3),L_5(2),L_6(2),L_5(3),L_4(4),U_4(2),U_4(3),U_4(4),U_5(2),U_5(3),U_6(2),U_7(2),PSp_4(4),PSp_4(8),PSp_6(2),PSp_6(3),PSp_6(4),PSp_8(2),\Omega_7(3),\Omega_9(3),P\Omega^\pm_8(2),P\Omega^\pm_8(3),P\Omega^\pm_{10}(2),P\Omega^+_{10}(3),G_2(3),G_2(4),{}^3D_4(2),{}^3D_4(3),{}^3D_4(4),{}^2F_4(2)',{}^2F_4(8),F_4(2)$). Each of these verdicts except the one for ${}^2F_4(2)'$ (not of the form $\mathbf G^F/Z$) is independently reproduced by the procedure of §5 (`validate_torus_method.out`, `extra_torus_check.out`, `boundary_check.out`).
+* An independent referee pass (a separate session with its own GAP scripts: character tables, direct conjugacy classes of $PSL(3,q)$ for 22 values $q\le64$ and $PSU(3,q)$ for $q\le13$, an independent construction of $G_2(8)$) found no mathematical error; its minor wording remarks are incorporated.
+* Nothing in the classification is conjectural. The only open aspect is number-theoretic: whether each of the families 3–7 contains infinitely many groups.
+
+
+## Appendix A. Maximal element orders of the groups in items 2 and 8 (from CTblLib; `spectra_list.g` → `spectra_list.out`)
+
+| group | maximal element orders $\mu(T)$ |
+|---|---|
+| M11 | 5,6,8,11 |
+| M12 | 6,8,10,11 |
+| M22 | 5,6,7,8,11 |
+| M23 | 6,8,11,14,15,23 |
+| M24 | 8,10,11,12,14,15,21,23 |
+| J1 | 6,7,10,11,15,19 |
+| J2 | 7,8,10,12,15 |
+| J3 | 8,9,10,12,15,17,19 |
+| HS | 7,8,11,12,15,20 |
+| He | 8,10,12,15,17,21,28 |
+| Ru | 14,15,16,20,24,26,29 |
+| Suz | 11,13,14,15,18,20,21,24 |
+| ON | 11,12,15,16,19,20,28,31 |
+| L4(3) | 8,9,12,13,20 |
+| L5(2) | 8,12,14,15,21,31 |
+| U4(2) | 5,9,12 |
+| U4(3) | 5,7,8,9,12 |
+| U5(2) | 8,11,12,15,18 |
+| U6(2) | 7,8,10,11,12,15,18 |
+| S4(4) | 4,6,10,15,17 |
+| S4(8) | 4,14,18,63,65 |
+| S6(2) | 7,8,9,10,12,15 |
+| O7(3) | 8,12,13,14,15,18,20 |
+| O8+(2) | 7,8,9,10,12,15 |
+| O8+(3) | 8,12,13,14,15,18,20 |
+| G2(3) | 7,8,9,12,13 |
+| G2(4) | 8,10,12,13,15,21 |
+| 3D4(2) | 8,12,13,18,21,28 |
+| 2F4(2)' | 10,12,13,16 |
+| 2F4(8) | 12,16,18,20,28,35,37,52,57,63,65,91,109 |
+| G2(8) | (no library table; (P2) proved in §8.3) |
+
+## References
+
+1. E. I. Khukhro, V. D. Mazurov (eds.), *Unsolved Problems in Group Theory. The Kourovka Notebook*, No. 21, arXiv:1401.0300v48 (2026), Problem 20.87.
+2. B. Huppert, *Endliche Gruppen I*, Springer 1967, Ch. II §8 (Dickson's theorem on $PSL_2(q)$).
+3. M. Suzuki, On a class of doubly transitive groups, *Ann. of Math.* 75 (1962) 105–145.
+4. R. Brandl, W. J. Shi, A characterization of finite simple groups with abelian Sylow 2-subgroups, *Ricerche Mat.* 42 (1993) 193–198 (Lemma 4: spectrum of ${}^2G_2(q)$); the statement is quoted, e.g., in arXiv:1606.00049.
+5. W. J. Shi, A characterization of Suzuki's simple groups, *Proc. Amer. Math. Soc.* 114 (1992) 589–591.
+6. H. N. Ward, On Ree's series of simple groups, *Trans. Amer. Math. Soc.* 121 (1966) 62–89.
+7. R. W. Carter, *Finite Groups of Lie Type: Conjugacy Classes and Complex Characters*, Wiley 1985.
+8. F. Digne, J. Michel, *Representations of Finite Groups of Lie Type*, 2nd ed., CUP 2020, Ch. 3.
+9. T. A. Springer, R. Steinberg, Conjugacy classes, in: *Seminar on Algebraic Groups and Related Finite Groups*, LNM 131, Springer 1970.
+10. A. A. Buturlakin, Spectra of finite linear and unitary groups, *Algebra and Logic* 47 (2008) 91–99.
+11. P. B. Kleidman, The maximal subgroups of the Chevalley groups $G_2(q)$ with $q$ odd, the Ree groups ${}^2G_2(q)$, and of their automorphism groups, *J. Algebra* 117 (1988) 30–71.
+12. B. N. Cooperstein, Maximal subgroups of $G_2(2^n)$, *J. Algebra* 70 (1981) 23–36.
+13. P. B. Kleidman, The maximal subgroups of the Steinberg triality groups ${}^3D_4(q)$ and of their automorphism groups, *J. Algebra* 115 (1988) 182–199.
+14. G. Malle, The maximal subgroups of ${}^2F_4(q^2)$, *J. Algebra* 139 (1991) 52–69.
+15. M. W. Liebeck, J. Saxl, G. M. Seitz, Subgroups of maximal rank in finite exceptional groups of Lie type, *Proc. London Math. Soc.* 65 (1992) 297–325.
+16. P. Kleidman, M. Liebeck, *The Subgroup Structure of the Finite Classical Groups*, CUP 1990.
+17. J. H. Conway et al., *ATLAS of Finite Groups*, OUP 1985; T. Breuer, *The GAP Character Table Library* (CTblLib), GAP 4.14.
+18. W. J. Shi, W. Yang, On finite groups with elements of prime power orders, arXiv:2003.09445 (one-prime case).
+
+Literature search (arXiv API, web search, October 2026) found no previous classification of simple groups with (P2); Problem 20.87 is still listed as open in arXiv:1401.0300v48.

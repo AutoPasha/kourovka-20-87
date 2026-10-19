@@ -1,0 +1,18 @@
+L2(q), 4<=q<=1000: 191 cases, mismatches 0
+  (P2) holds for q in [ 4, 5, 7, 8, 9, 11, 13, 16, 17, 19, 23, 25, 27, 29, 
+  31, 32, 37, 41, 43, 47, 49, 53, 64, 67, 71, 73, 79, 81, 89, 97, 101, 103, 
+  107, 109, 113, 125, 127, 128, 137, 149, 151, 163, 173, 191, 193, 197, 199, 
+  223, 233, 243, 257, 269, 271, 283, 289, 293, 317, 343, 353, 367, 383, 401, 
+  431, 433, 449, 487, 499, 512, 523, 557, 577, 593, 607, 641, 647, 653, 677, 
+  751, 773, 787, 809, 823, 863, 907, 971, 977 ]
+L3(q), U3(q), q<=200: 60 values of q, mismatches 0
+  L3: (P2) holds for q in [ 2, 3, 4, 5, 7, 8, 9, 13, 16, 17, 25, 49, 97, 193 ]
+  U3: (P2) holds for q in [ 3, 4, 5, 7, 8, 11, 23, 32, 47, 128 ]
+Sz(8): torus method true, formula true
+Sz(32): torus method true, formula true
+Sz(128): torus method true, formula true
+Sz(512): torus method true, formula true
+Sz(2048): torus method true, formula true
+2G2(27): torus method true, formula true
+2G2(243): torus method true, formula true
+2G2(2187): torus method true, formula true
